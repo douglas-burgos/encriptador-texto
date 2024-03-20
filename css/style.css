@@ -1,0 +1,349 @@
+:root {
+    --fuente: 'Roboto', sans-serif;
+    
+    --colorFond: #F3F5FC;
+    --colorPrincipal: #0A3871;
+    --colorSecundario: #052051;
+    --colorBlanco: #fff;
+    --colorGris: #495057;
+    --shadow: #00000030;
+}
+
+body {
+    background: var(--colorFond);
+    font-family: var(--fuente);
+}
+
+.conteiner {
+    display: flex;
+    flex-direction: row;
+    min-height: 100vh;
+}
+
+.conteiner__logo {
+    width: 10vw;
+    text-align: center;
+    padding-top: 2rem;
+}
+
+.conteiner__encrypt {
+    width: 60vw;
+    padding-top: 15vh;
+    display: flex;
+    justify-content: center;
+}
+
+.conteiner__encrypt .encrypt__message {
+    width: 75%;
+}
+
+.encrypt__message textarea {
+    box-sizing: border-box;
+    width: 100%;
+    resize: none;
+    background: transparent;
+    color: var(--colorPrincipal);
+    font-size: 2rem;
+    height: 60vh;
+    border: none;
+}
+
+.encrypt__message textarea::placeholder{
+    color: var(--colorPrincipal);
+}
+
+textarea:focus {
+    outline: none;
+}
+
+.encrypt__message .bottom {
+    display: flex;
+    gap: 1rem;
+    padding-top: 1rem;
+    flex-direction: column;
+}
+
+/* ESTILOS DE LOS BOTONES*/
+
+.conteiner__encrypt .buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+.button {
+    width: 100%;
+    height: 7vh;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border: 1px solid var(--colorSecundario);
+    border-radius: 1rem;
+    background-color: var(--colorPrincipal);
+    overflow: hidden;
+    padding: 0;
+}
+
+.button,
+.button__icon,
+.button__text {
+    transition: all 0.3s;
+}
+
+.button .button__text {
+    width: 80%;
+    color: var(--colorBlanco);
+    font-weight: 600;
+}
+
+.button .button__icon {
+    height: 100%;
+    width: 20%;
+    background-color: var(--colorSecundario);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button .svg {
+    width: 20px;
+    fill: var(--colorBlanco);
+}
+
+.button:hover {
+    background: var(--colorSecundario);
+}
+
+.button:hover .button__text {
+    width: 0%;
+    color: transparent;
+}
+
+.button:hover .button__icon {
+    width: 100%;
+    transform: translateX(0);
+}
+
+.button:active .button__icon {
+    background-color: var(--colorPrincipal);
+}
+
+.button:active {
+    border: 1px solid var(--colorPrincipal);
+}
+
+.conteiner__message {
+    width: 30vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.conteiner__message .munieco {
+    width: 100%;
+}
+
+.conteiner__message .message {
+    background-color: var(--colorBlanco);
+    border-radius: 1.5rem;
+    height: 90vh;
+    width: 75%;
+    display: flex;
+    align-items: center;
+    box-shadow: 0em 0em 2em 0.1em var(--shadow);
+}
+
+.conteiner__message .message .no_encrypt,
+.conteiner__message .message .encrypt {
+    padding: 1rem;
+    margin: 0 auto;
+}
+
+.conteiner__message .message .no_encrypt {
+    text-align: center;
+}
+
+.conteiner__message .message .encrypt {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    width: 100%;
+}
+
+.conteiner__message .message .encrypt textarea {
+    width: 100%;
+    margin: 1rem auto;
+    height: 100%;
+    font-weight: 200;
+    font-size: 1.3rem;
+    box-sizing: border-box;
+    resize: none;
+    background: transparent;
+    border: none;
+    padding: 1rem;
+}
+
+.button__copy {
+    margin-bottom: 2.3rem;
+}
+
+.conteiner__message .message .encrypt {
+    display: none;
+}
+
+.bottom img {
+    width: 16px;
+    height: 16px;
+}
+
+.bottom small {
+    display: flex;
+    flex-direction: row;
+    align-items: end;
+    color: var(--colorGris);
+    gap: 0.5rem;
+}
+
+/* FOOTER*/
+
+.footer{
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+    padding: 2vh;
+}
+
+.social-media .button-icon{
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    background: var(--colorBlanco);
+    border-radius: 1rem;
+    cursor: pointer;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.5s ease-out;
+    overflow: hidden;
+}
+
+.social-media .button-icon .icon{
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    text-align: center;
+    border-radius: 1rem;
+    box-sizing: border-box;
+    line-height: 2.21;
+}
+
+.social-media .button-icon:nth-child(1):hover .icon{ background: #4267b2; }
+
+.social-media .button-icon:nth-child(2):hover .icon{ background: #e95950; }
+
+.social-media .button-icon:nth-child(3):hover .icon{ background: #1da1f2; }
+
+.social-media .button-icon:nth-child(4):hover .icon{ background: #0077b5; }
+
+.social-media .button-icon:nth-child(5):hover .icon{ background: #333; }
+
+@media (min-width: 768px) {
+    .social-media .button-icon:hover{ 
+        width: 160px;
+    }
+}
+
+.social-media .button-icon .icon i{
+    font-size: 27px;
+    line-height: 1.5;
+    transition: all 0.5s ease-out;
+    color: black;
+}
+
+a{ text-decoration: none; }
+
+.social-media .button-icon:hover .icon i{ color: var(--colorBlanco); }
+
+.social-media .button-icon span{
+    font-size: 21px;
+    margin-left: 3%;
+    font-weight: bold;
+    transition: all 0.5s ease-out;
+}
+
+
+.social-media .button-icon:nth-child(1):hover span{ color: #4267b2; }
+
+.social-media .button-icon:nth-child(2):hover span{ color: #e95950; }
+
+.social-media .button-icon:nth-child(3):hover span{ color: #1da1f2; }
+
+.social-media .button-icon:nth-child(4):hover span{ color: #0077b5; }
+
+.social-media .button-icon:nth-child(5):hover span{ color: #333; }
+
+@media (max-width: 768px) {
+    .conteiner {
+        flex-direction: column;
+        min-width: 100vw;
+    }
+
+    .conteiner__logo {
+        height: 10vh;
+        padding-left: 1rem;
+    }
+
+    .conteiner__logo img {
+        width: 1.5rem;
+    }
+
+    .conteiner__encrypt {
+        padding-top: 0;
+    }
+
+    .conteiner__encrypt,
+    .conteiner__message {
+        width: 100vw;
+    }
+
+    .encrypt__message textarea {
+        box-sizing: border-box;
+        width: 100%;
+        resize: none;
+        background: transparent;
+        font-size: 2rem;
+        height: 60vh;
+    }
+
+    .conteiner__message {
+        margin-top: 5vh;
+    }
+
+    .conteiner__message .message {
+        height: 1%;
+        margin-bottom: 5vh;
+    }
+
+    .button__copy {
+        margin-bottom: 0.3rem;
+    }
+
+    .encrypt__message textarea {
+        height: 40vh;
+    }
+
+    .conteiner__message .no_encrypt {
+        margin: 0 auto;
+    }
+
+    .no_encrypt img {
+        display: none;
+    }
+}
+
+@media (max-width: 450px) {
+    .bottom .buttons {
+        display: flex;
+        flex-direction: column;
+    }
+}
